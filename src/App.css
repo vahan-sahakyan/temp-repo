@@ -1,3 +1,18 @@
+/*
+BASICS: {
+  #F5F6FA
+  #3FA9F5
+  #2598FF
+  #13334A
+}
+CARDS: {
+  #2598FF
+  #F9CE34
+  #2E465B
+  #E02526
+}
+*/
+
 .App {
   text-align: center;
 }
@@ -8,6 +23,14 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+button {
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  background-color: #0000;
 }
 
 /* IMPORTED FROM RAW HTML/CSS */
@@ -35,11 +58,11 @@ body {
   background-color: #f5f6fa;
   flex: 1;
 }
-
+/* 
 .hidden {
   visibility: hidden;
   display: none;
-}
+} */
 
 .sidebar-head {
   display: flex;
@@ -47,15 +70,27 @@ body {
   justify-content: space-between;
   font-size: 0.7em;
   /* padding-left: 2em; */
+  height: 73px;
   background-color: #1112;
   margin-bottom: 6px;
+
+  position: relative;
 }
 .sidebar-head h1#logo {
   padding-left: 1.4em;
   /* font-size: 18px; */
   letter-spacing: 3px;
+  white-space: nowrap;
+
+  display: flex;
+  align-items: center;
+  height: 73px;
+
+  cursor: pointer;
 }
 .sidebar-head img {
+  z-index: 999;
+
   font-size: 1em;
   filter: invert(100%) sepia(1%) saturate(79%) hue-rotate(148deg) brightness(118%) contrast(100%);
   background-color: #fff1;
@@ -63,19 +98,63 @@ body {
   width: 6.5em;
   padding: 2.3em;
   cursor: pointer;
+
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
+.menu-items {
+  height: 100%;
+}
 .menu-item_icon {
   height: 1.3em;
   line-height: 1.3em;
-  width: 16px;
+  /* width: 16px !important; */
   display: flex;
   justify-content: center;
+  padding: 1px;
+  min-width: 16px;
+  flex: 0 0 0;
 }
 
 .menu-item_text {
-  padding-right: 2em;
+  /* padding-right: 2em; */
   white-space: nowrap;
+}
+
+.closed.sidebar {
+  width: 4.6em;
+}
+.closed.sidebar .menu-item_text {
+  /* display: none; */
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: 300ms;
+}
+.closed.sidebar h1 {
+  /* display: none; */
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: 300ms;
+}
+
+.open.sidebar {
+  width: 300px;
+}
+.open.sidebar .menu-item_text {
+  /* display: flex; */
+  transition: 300ms;
+}
+
+.open.sidebar h1 {
+  display: flex;
+  transition: 300ms;
+}
+
+.sidebar {
+  transition: 500ms;
+  /* width: 300px; */
 }
 
 .sidebar li {
@@ -85,8 +164,13 @@ body {
   gap: 1em;
   padding: 1.2em 1.4em;
   border-left: 5px solid #0000;
+  overflow-x: hidden;
+}
+.sidebar li i {
+  min-width: 16px;
 }
 .sidebar li:hover,
+.sidebar li:focus,
 .sidebar li.active_menu-item {
   color: #3fa9f5;
   background-color: #1112;
@@ -103,14 +187,15 @@ body {
   background-color: #fff0;
   /* box-shadow: 0px 0px 10px #0002; */
 }
-.profile-navbar a {
+.profile-navbar button {
   height: 1em;
+  font-size: 1em;
 }
-.profile-navbar_icons a:nth-child(1) {
+.profile-navbar_icons button:nth-child(1) {
   font-size: 0.9em;
   margin-right: 3px;
 }
-.profile-navbar_icons a:nth-child(3) {
+.profile-navbar_icons button:nth-child(3) {
   font-size: 1.15em;
 }
 .profile-navbar_icons {
@@ -123,14 +208,15 @@ body {
   gap: 1.4em;
   margin-right: 1em;
 }
-.profile-navbar_icons img:hover {
+.profile-navbar_icons button:focus,
+.profile-navbar_icons button:hover {
   filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(80%) contrast(96%);
 }
 .profile-navbar_icons img {
   filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(130%) contrast(96%);
   font-size: 1em;
-  width: 1em;
   height: 1em;
+  width: 1em;
 }
 .user:hover {
   color: #000;
@@ -267,15 +353,17 @@ body {
 .tab:hover,
 .tab.active_tab {
   color: #3fa9f5;
+  color: #2598ff;
   border-top: 1px solid #3fa9f5;
   cursor: pointer;
   font-weight: 600;
+  font-weight: 500;
 }
 
 /* CARDS START */
 .blue {
-  color: #3fa9f5;
-  background-color: #3fa9f533;
+  color: #2598ff;
+  background-color: #2598ff33;
 }
 
 .yellow {
@@ -284,8 +372,8 @@ body {
 }
 
 .black {
-  color: #333;
-  background-color: #3332;
+  color: #2e465b;
+  background-color: #2e465b22;
 }
 .red {
   color: #e02526;
@@ -299,13 +387,23 @@ body {
   /* flex-wrap: wrap; */
   padding: 30px 4vw;
 }
+.card:hover,
+.card:focus,
 .card_active {
   box-shadow: 0px 5px 10px #cfcece82;
+  box-shadow: 0px 4px 0px #cfcece82;
+  box-shadow: 0px 4px 4px #0002;
+  transform: translate(0px, -4px);
 }
+.card:link,
 .card {
+  transition: 60ms ease-in-out;
+
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
+  justify-items: start;
+
   gap: 0 16px;
 
   background-color: #fff;

@@ -1,105 +1,121 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import './App.css';
 
 const gitHubBaseURL = 'https://vahan-sahakyan.github.io/dashboard/';
 
 function App() {
-  // const isHidden = true;
   const logo = document.getElementById('logo');
   const toggleSidebar = document.getElementById('toggle-sidebar');
-  const menuTextItems = document.querySelectorAll('.menu-item_text');
+  // const menuItems = document.querySelector('.menu-items').querySelectorAll('li');
+  const sidebar = document.querySelector('.sidebar');
 
   const updateToggleIcon = () => {
-    !logo.className.includes('hidden')
+    !logo.className.includes('closed')
       ? (toggleSidebar.src = gitHubBaseURL + 'assets/icons/close.png')
       : (toggleSidebar.src = gitHubBaseURL + 'assets/icons/more.png');
   };
+  const [isClicked, setIsClicked] = useState(false);
+  const toggleHandler = () => {
+    sidebar.classList.toggle('closed'); // TOGGLE
+    sidebar.classList.toggle('open'); // TOGGLE
+    logo.classList.toggle('closed'); // TOGGLE
+    logo.classList.toggle('open'); // TOGGLE
+    updateToggleIcon();
 
-  // const toggleHandler = () => {
-  //   menuTextItems.forEach(item => {
-  //     item.classList.toggle('hidden');
-  //     console.log(item);
-  //   });
-  //   logo.classList.toggle('hidden');
-  //   updateToggleIcon();
-  // };
+    // anti auto-close TOGGLE ON/OFF only onClick
+    setIsClicked(!isClicked);
+  };
 
   const openSidebar = () => {
-    menuTextItems.forEach(item => {
-      item.classList.remove('hidden');
-      // console.log(item);
-    });
+    sidebar.classList.add('open'); // ADD
+    sidebar.classList.remove('closed'); // REMOVE
     console.log('✅ Opened');
-    logo.classList.remove('hidden');
-    updateToggleIcon();
-  };
-  const closeSidebar = () => {
-    menuTextItems.forEach(item => {
-      item.classList.add('hidden');
-      // console.log(item);
-    });
-    console.log('❌ Closed');
-    logo.classList.add('hidden');
+    logo.classList.add('open'); // ADD
+    logo.classList.remove('closed'); // REMOVE
     updateToggleIcon();
   };
 
-  useLayoutEffect(() => {
-    openSidebar();
-  });
+  const closeSidebar = () => {
+    sidebar.classList.add('closed'); // ADD
+    sidebar.classList.remove('open'); // REMOVE
+    console.log('❌ Closed');
+    logo.classList.add('closed'); // ADD
+    logo.classList.remove('open'); // REMOVE
+    updateToggleIcon();
+
+    // anti auto-close OFF
+    setIsClicked(false);
+  };
+
+  const selectMenuItem = ({ target }) => {
+    // closeSidebar();
+    // menuItems.forEach(el => el.classList.remove('active_menu-item'));
+    // setTimeout(() => {
+    //   target.classList.add('active_menu-item');
+    // }, 300);
+  };
+
+  useEffect(() => {
+    // openSidebar();
+    toggleHandler();
+  }, [1]);
 
   return (
     <div className="global-container">
-      <aside onMouseEnter={openSidebar} onMouseLeave={closeSidebar} className="sidebar">
+      <aside
+        // onMouseEnter={openSidebar}
+        onMouseLeave={() => !isClicked && closeSidebar()}
+        className="sidebar  open"
+      >
         <div className="sidebar-head">
-          <h1 className="hidden" id="logo">
+          <h1 className="" id="logo">
             SIGNAL AI
           </h1>
-          <img
-            // onClick={toggleHandler}
-            id="toggle-sidebar"
-            alt="close"
-            src={gitHubBaseURL + 'assets/icons/more.png'}
-          />
+          <img onClick={toggleHandler} id="toggle-sidebar" alt="close" src={gitHubBaseURL + 'assets/icons/more.png'} />
         </div>
 
-        <ul className="menu-items">
-          <li className="active_menu-item">
+        <ul
+          onMouseEnter={openSidebar}
+          // onMouseLeave={closeSidebar}
+          className="menu-items"
+        >
+          <li onClick={selectMenuItem} className="active_menu-item">
             <i className="menu-item_icon fa-solid fa-house"></i>
-            <p className="menu-item_text hidden">Home</p>
+            <p className="menu-item_text hiddenn">Home</p>
           </li>
-          <li>
+          <li onClick={selectMenuItem}>
             <i className="menu-item_icon fa-solid fa-file-lines"></i>
-            <p className="menu-item_text hidden">Projects</p>
+            <p className="menu-item_text hiddenn">Projects</p>
           </li>
-          <li>
+          <li onClick={selectMenuItem}>
             <i className="menu-item_icon fa-solid fa-circle-exclamation"></i>
-            <p className="menu-item_text hidden">Signals</p>
+            <p className="menu-item_text hiddenn">Signals</p>
           </li>
-          <li>
+          <li onClick={selectMenuItem}>
             <i
               // style={{ height: '40px', lineHeight: '40px' }}
               className="menu-item_icon fa-solid fa-chart-simple"
             ></i>
-            <p className="menu-item_text hidden">Drug Event Combination</p>
+            <p className="menu-item_text hiddenn">Drug Event Combination</p>
           </li>
         </ul>
       </aside>
-      <div className="wrapper">
+      <div className="wrapper" onClick={closeSidebar}>
         <nav className="profile-navbar">
           <div className="profile-navbar_icons">
-            <a href="#">
+            <button>
               <img alt="support-icon" className="support-icon" src={gitHubBaseURL + 'assets/icons/lifebuoy.png'} />
-            </a>
-            <a href="#">
+            </button>
+            <button>
               <img alt="settings-icon" className="settings-icon" src={gitHubBaseURL + 'assets/icons/setting.png'} />
-            </a>
-            <a href="#">
+            </button>
+            <button>
               <img
                 alt="notification-icon"
                 className="notification-icon"
                 src={gitHubBaseURL + 'assets/icons/notification.png'}
               />
-            </a>
+            </button>
           </div>
           <div className="user">
             <span className="user_name"> Bharath Reddy</span>
@@ -117,26 +133,26 @@ function App() {
           </ul>
 
           <div className="cards-container">
-            <div className="card">
+            <button className="card">
               <i className="card--icon blue fa-solid fa-file-lines"></i>
               <span className="card--quantity">5</span>
               <p className="card--name">Projects Created</p>
-            </div>
-            <div className="card card_active">
+            </button>
+            <button className="card card_active">
               <i className="card--icon yellow fa-solid fa-file-lines"></i>
               <span className="card--quantity ">6</span>
               <p className="card--name">Projects to Review</p>
-            </div>
-            <div className="card">
+            </button>
+            <button className="card">
               <i className="card--icon black fa-solid fa-file-lines"></i>
               <span className="card--quantity">5</span>
               <p className="card--name">Projects for QC</p>
-            </div>
-            <div className="card">
+            </button>
+            <button className="card">
               <i className="card--icon red fa-solid fa-circle-exclamation"></i>
               <span className="card--quantity">3</span>
               <p className="card--name">Signals Identified</p>
-            </div>
+            </button>
           </div>
           <h4 className="table-header">Approved Reports</h4>
           {/* TABLE START*/}
