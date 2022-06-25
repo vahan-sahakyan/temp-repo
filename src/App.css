@@ -116,6 +116,8 @@ button {
   padding: 1px;
   min-width: 16px;
   flex: 0 0 0;
+
+  transform: scale(1.5);
 }
 
 .menu-item_text {
@@ -144,7 +146,7 @@ button {
 }
 .open.sidebar .menu-item_text {
   /* display: flex; */
-  transition: 300ms;
+  transition: 150ms;
 }
 
 .open.sidebar h1 {
@@ -158,7 +160,7 @@ button {
 }
 
 .sidebar li {
-  color: #ddd;
+  color: #999;
   display: flex;
   align-items: center;
   gap: 1em;
@@ -173,6 +175,7 @@ button {
 .sidebar li:focus,
 .sidebar li.active_menu-item {
   color: #3fa9f5;
+  color: #fff;
   background-color: #1112;
   border-left: 5px solid #3fa9f5;
   cursor: pointer;
@@ -387,14 +390,23 @@ button {
   /* flex-wrap: wrap; */
   padding: 30px 4vw;
 }
+/* .card_active, */
 .card:hover,
-.card:focus,
-.card_active {
+.card:focus {
   box-shadow: 0px 5px 10px #cfcece82;
-  box-shadow: 0px 4px 0px #cfcece82;
-  box-shadow: 0px 4px 4px #0002;
-  transform: translate(0px, -4px);
+
+  /* box-shadow: 3px 3px 1px #aaaa; */
+  box-shadow: 0px 3px 1px #cfcece82;
+  /* transform: translate(-3px, -3px); */
+  transform: translate(0px, -3px);
 }
+.card:active {
+  /* box-shadow: 1px 1px 0px #aaaa; */
+  box-shadow: 0px 1px 0px #cfcece82;
+  /* transform: translate(-1px, -1px); */
+  transform: translate(0px, -1px);
+}
+
 .card:link,
 .card {
   transition: 60ms ease-in-out;

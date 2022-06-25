@@ -1,12 +1,49 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+
 import './App.css';
+import {
+  HomeOL,
+  HomeSD,
+  FileOL,
+  FileSD,
+  CircleOL,
+  CircleSD,
+  ChartOL,
+  ChartSD,
+} from './components/MenuIcons/menu-icons';
 
 const gitHubBaseURL = 'https://vahan-sahakyan.github.io/dashboard/';
+
+const MenuItem = ({ handleClick, itemOL, itemSD, text, isActiveProp }) => {
+  const ref = useRef();
+  const item = ref.current;
+  const [isActive, setIsActive] = useState(isActiveProp);
+
+  return (
+    <li
+      ref={ref}
+      onClick={() => {
+        handleClick();
+        setIsActive(true);
+        item.classList.add('active_menu-item')
+        item.closest('ul').querySelectorAll('li').forEach(el => {
+            if (el.textContent !== item.textContent) {
+                el.classList.remove('active_menu-item');
+            }
+        })
+      }}
+      className={isActive ? 'active_menu-item' : ''}
+    >
+      {!isActive ? itemOL : itemSD}
+      <p className="menu-item_text">{text}</p>
+    </li>
+  );
+};
 
 function App() {
   const logo = document.getElementById('logo');
   const toggleSidebar = document.getElementById('toggle-sidebar');
-  // const menuItems = document.querySelector('.menu-items').querySelectorAll('li');
+  const menuItems = document.querySelector('.menu-items').querySelectorAll('li');
   const sidebar = document.querySelector('.sidebar');
 
   const updateToggleIcon = () => {
@@ -55,20 +92,16 @@ function App() {
     setIsClosed(true);
   };
 
-  const selectMenuItem = ({ target }) => {
-    // closeSidebar();
-    // menuItems.forEach(el => el.classList.remove('active_menu-item'));
-    // setTimeout(() => {
-    //   target.classList.add('active_menu-item');
-    // }, 300);
+  const selectMenuItem = () => {
+    closeSidebar();
   };
 
   useEffect(() => {
     // openSidebar();
-    toggleHandler();
+   toggleHandler();
   }, []);
 
-  return (
+return (
     <div className="global-container">
       <aside
         // onMouseEnter={openSidebar}
@@ -82,33 +115,32 @@ function App() {
           <img onClick={toggleHandler} id="toggle-sidebar" alt="close" src={gitHubBaseURL + 'assets/icons/more.png'} />
         </div>
 
-        <ul
+       <ul
           onMouseEnter={openSidebar}
           // onMouseLeave={closeSidebar}
           className="menu-items"
         >
-          <li onClick={selectMenuItem} className="active_menu-item">
-            <i className="menu-item_icon fa-solid fa-house"></i>
-            <p className="menu-item_text hiddenn">Home</p>
-          </li>
-          <li onClick={selectMenuItem}>
-            <i className="menu-item_icon fa-solid fa-file-lines"></i>
-            <p className="menu-item_text hiddenn">Projects</p>
-          </li>
-          <li onClick={selectMenuItem}>
-            <i className="menu-item_icon fa-solid fa-circle-exclamation"></i>
-            <p className="menu-item_text hiddenn">Signals</p>
-          </li>
-          <li onClick={selectMenuItem}>
-            <i
-              // style={{ height: '40px', lineHeight: '40px' }}
-              className="menu-item_icon fa-solid fa-chart-simple"
-            ></i>
-            <p className="menu-item_text hiddenn">Drug Event Combination</p>
-          </li>
+          <MenuItem
+            handleClick={selectMenuItem}
+            isActiveProp={true}
+            itemOL={<HomeOL />}
+            itemSD={<HomeSD />}
+            text="Home"
+          />
+          <MenuItem handleClick={selectMenuItem} itemOL={<FileOL />} itemSD={<FileSD />} text="Projects" />
+          <MenuItem handleClick={selectMenuItem} itemOL={<CircleOL />} itemSD={<CircleSD />} text="Signals" />
+          <MenuItem
+            handleClick={selectMenuItem}
+            itemOL={<ChartOL />}
+            itemSD={<ChartSD />}
+            text="Drug Event Combination"
+          />
         </ul>
       </aside>
-      <div className="wrapper" onClick={closeSidebar}>
+      <div
+        className="wrapper"
+        // onClick={closeSidebar}
+      >
         <nav className="profile-navbar">
           <div className="profile-navbar_icons">
             <button>
