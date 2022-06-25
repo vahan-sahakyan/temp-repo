@@ -14,7 +14,10 @@ function App() {
       ? (toggleSidebar.src = gitHubBaseURL + 'assets/icons/close.png')
       : (toggleSidebar.src = gitHubBaseURL + 'assets/icons/more.png');
   };
+
   const [isClicked, setIsClicked] = useState(false);
+  const [isClosed, setIsClosed] = useState(true);
+
   const toggleHandler = () => {
     sidebar.classList.toggle('closed'); // TOGGLE
     sidebar.classList.toggle('open'); // TOGGLE
@@ -24,18 +27,22 @@ function App() {
 
     // anti auto-close TOGGLE ON/OFF only onClick
     setIsClicked(!isClicked);
+    setIsClosed(!isClosed);
   };
 
   const openSidebar = () => {
+    if (!isClosed) return;
     sidebar.classList.add('open'); // ADD
     sidebar.classList.remove('closed'); // REMOVE
     console.log('✅ Opened');
     logo.classList.add('open'); // ADD
     logo.classList.remove('closed'); // REMOVE
     updateToggleIcon();
+    setIsClosed(false);
   };
 
   const closeSidebar = () => {
+    if (isClosed) return;
     sidebar.classList.add('closed'); // ADD
     sidebar.classList.remove('open'); // REMOVE
     console.log('❌ Closed');
@@ -45,6 +52,7 @@ function App() {
 
     // anti auto-close OFF
     setIsClicked(false);
+    setIsClosed(true);
   };
 
   const selectMenuItem = ({ target }) => {
@@ -58,7 +66,7 @@ function App() {
   useEffect(() => {
     // openSidebar();
     toggleHandler();
-  }, [1]);
+  }, []);
 
   return (
     <div className="global-container">
