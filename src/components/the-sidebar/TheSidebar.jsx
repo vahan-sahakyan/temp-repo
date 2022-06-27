@@ -4,18 +4,8 @@ import { HomeOL, HomeSD, FileOL, FileSD, CircleOL, CircleSD, ChartOL, ChartSD } 
 
 const GITHUB_URL = 'https://vahan-sahakyan.github.io/dashboard/';
 
-// const logo = document.getElementById('logo');
-// const toggleSidebar = document.getElementById('toggle-sidebar');
-// const sidebar = document.querySelector('.sidebar');
-// const menuItems = document.querySelector('.menu-items').querySelectorAll('li');
-
 const TheSidebar = () => {
-  const logoR = useRef();
-  const logo = logoR.current;
-  const toggleSidebarR = useRef();
-  const toggleSidebar = toggleSidebarR.current;
-  const sidebarR = useRef();
-  const sidebar = sidebarR.current;
+  let logo, toggleSidebar, sidebar;
 
   const updateToggleIcon = () => {
     !logo.className.includes('closed')
@@ -67,20 +57,24 @@ const TheSidebar = () => {
   useLayoutEffect(() => {
     // toggleOnClickHandler();
     console.log(new Date());
-    ////////////////////////////////////////////////////
-    console.log('DEBUG:', logo);
+    ///////////////////////////////////////////////////
+    // console.log('DEBUG:', logo);
   }, []);
 
   return (
-    <aside ref={sidebarR} onMouseLeave={() => !isClicked && closeSidebar()} className="sidebar  open">
+    <aside
+      ref={sidebarRef => (sidebar = sidebarRef)}
+      onMouseLeave={() => !isClicked && closeSidebar()}
+      className="sidebar  open"
+    >
       <div className="sidebar-head">
-        <h1 ref={logoR} id="logo">
+        <h1 ref={logoRef => (logo = logoRef)} id="logo">
           SIGNAL AI
         </h1>
         <img
           onClick={toggleOnClickHandler}
           id="toggle-sidebar"
-          ref={toggleSidebarR}
+          ref={toggleSidebarRef => (toggleSidebar = toggleSidebarRef)}
           alt="close"
           src={GITHUB_URL + 'assets/icons/more.png'}
         />
