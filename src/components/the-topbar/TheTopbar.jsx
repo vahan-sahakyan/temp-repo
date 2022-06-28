@@ -1,4 +1,5 @@
 import React from 'react';
+import './TheTopbar.scss';
 
 const gitHubBaseURL = 'https://vahan-sahakyan.github.io/dashboard/';
 

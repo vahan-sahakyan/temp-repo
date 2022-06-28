@@ -1,0 +1,125 @@
+.sidebar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.7em;
+  /* padding-left: 2em; */
+  height: 73px;
+  background-color: #1112;
+  margin-bottom: 6px;
+
+  position: relative;
+
+  h1#logo {
+    padding-left: 1.4em;
+    /* font-size: 18px; */
+    letter-spacing: 3px;
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    height: 73px;
+
+    cursor: pointer;
+  }
+  img {
+    z-index: 999;
+
+    font-size: 1em;
+    filter: invert(100%) sepia(1%) saturate(79%) hue-rotate(148deg) brightness(118%) contrast(100%);
+    background-color: #fff1;
+    height: 6.5em;
+    width: 6.5em;
+    padding: 2.3em;
+    cursor: pointer;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.closed.sidebar {
+  width: 4.6em;
+
+  .menu-item_text {
+    /* display: none; */
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: 300ms;
+  }
+
+  h1 {
+    /* display: none; */
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: 300ms;
+  }
+}
+
+.open.sidebar {
+  width: 300px;
+
+  .menu-item_text {
+    /* display: flex; */
+    transition: 150ms;
+  }
+
+  h1 {
+    display: flex;
+    transition: 300ms;
+  }
+}
+
+.sidebar {
+  transition: 500ms;
+  /* width: 300px; */
+
+  color: #fff;
+  background-color: #173951;
+  background-color: #13334a;
+
+  li {
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1.2em 1.4em;
+    border-left: 5px solid #0000;
+    overflow-x: hidden;
+  }
+  li i {
+    min-width: 16px;
+  }
+
+  li:hover,
+  li:focus,
+  li.active_menu-item {
+    color: #3fa9f5;
+    color: #fff;
+    background-color: #1112;
+    border-left: 5px solid #3fa9f5;
+    cursor: pointer;
+  }
+}
+
+.menu-items {
+  height: 100%;
+}
+.menu-item_icon {
+  height: 1.3em;
+  line-height: 1.3em;
+  /* width: 16px !important; */
+  display: flex;
+  justify-content: center;
+  padding: 1px;
+  min-width: 16px;
+  flex: 0 0 0;
+
+  transform: scale(1.5);
+}
+
+.menu-item_text {
+  /* padding-right: 2em; */
+  white-space: nowrap;
+}

@@ -1,0 +1,55 @@
+.scroll-x::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.scroll-x {
+  overflow-x: scroll;
+
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+.table-header {
+  font-weight: 500;
+  background-color: #fff;
+  color: #222;
+  padding: 1em 5%;
+}
+.table-header:last-of-type {
+  margin-top: 12px;
+}
+table:last-of-type {
+  /* padding-bottom: 5em; */
+}
+
+table {
+  font-size: 0.8em;
+  width: 100%;
+  color: #222;
+  border-spacing: 0;
+  background-color: #fff;
+}
+thead * {
+  background-color: #00000004;
+  color: #000;
+}
+th {
+  font-size: 0.9em;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 1.2em 0.8em;
+  background-color: #f5f6fa;
+  /* border: 1px solid red; */
+}
+td {
+  color: #444;
+  padding: 1em 2em;
+  /* padding-left: 1em; */
+  border-bottom: 1px solid #0001;
+  text-align: center;
+}
+td:nth-child(7) {
+  text-align: left;
+}

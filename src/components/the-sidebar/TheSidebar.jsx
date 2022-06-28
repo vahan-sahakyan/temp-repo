@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import MenuItem from './MenuItem';
-import { HomeOL, HomeSD, FileOL, FileSD, CircleOL, CircleSD, ChartOL, ChartSD } from '../MenuIcons/menu-icons';
+import { HomeOL, HomeSD, FileOL, FileSD, CircleOL, CircleSD, ChartOL, ChartSD } from './menu-icons';
+import './TheSidebar.scss';
 
 const GITHUB_URL = 'https://vahan-sahakyan.github.io/dashboard/';
 
@@ -55,7 +56,7 @@ const TheSidebar = () => {
   };
 
   useLayoutEffect(() => {
-    // toggleOnClickHandler();
+    toggleOnClickHandler();
     console.log(new Date());
     ///////////////////////////////////////////////////
     // console.log('DEBUG:', logo);

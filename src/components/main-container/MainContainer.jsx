@@ -1,14 +1,14 @@
 import React from 'react';
 import TheTopbar from '../the-topbar/TheTopbar';
 import Table from '../table/Table';
-// import './MainContainer.scss';
+import './MainContainer.scss';
 // import { Redirect, Route, Switch } from 'react-router-dom';
 
 const MainContainer = () => {
   return (
     <div className="wrapper">
       <div className="main-container">
-        <>
+        <div>
           <TheTopbar />
 
           <header className="main-header">
@@ -18,11 +18,12 @@ const MainContainer = () => {
             <li className="tab active_tab">Dashboard</li>
             <li className="tab">Analysis Overview</li>
           </ul>
-        </>
-        {/* ELEM CARDS -- START */}
-        <div className="scroll">
-          <div className="main-wrapper">
-            <div className="scroll-x">
+        </div>
+        {/* MAIN CONTENT -- START */}
+        <div className="main-content_scroll">
+          <div className="main-content">
+            {/* CARDS -- START */}
+            <div className="cards-container_scroll-x">
               <div className="cards-container">
                 <button className="card">
                   <i className="card--icon blue fa-solid fa-file-lines"></i>
@@ -55,6 +56,7 @@ const MainContainer = () => {
             <Table />
           </div>
         </div>
+        {/* MAIN CONTENT -- END */}
       </div>
     </div>
   );
