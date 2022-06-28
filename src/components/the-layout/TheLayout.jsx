@@ -1,7 +1,7 @@
 import React from 'react';
-import './layout.scss';
-import MainContainer from './MainContainer';
-import TheSidebar from '../the-sidebar/TheSidebar';
+import './TheLayout.scss';
+import MainContainer from './main-container/MainContainer';
+import TheSidebar from './the-sidebar/TheSidebar';
 
 const TheLayout = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import TheTopbar from '../the-topbar/TheTopbar';
-import Table from '../table/Table';
+import Table from '../../table/Table';
 import './MainContainer.scss';
 // import { Redirect, Route, Switch } from 'react-router-dom';
 
@@ -17,11 +17,15 @@ const MainContainer = () => {
           <ul className="tabs-container">
             <li className="tab active_tab">Dashboard</li>
             <li className="tab">Analysis Overview</li>
+            <li className="tab">Mommy Mommy</li>
+            <li className="tab">Give Me Yummy</li>
           </ul>
         </div>
         {/* MAIN CONTENT -- START */}
         <div className="main-content_scroll">
           <div className="main-content">
+            {/* /////////////////////////////////// */}
+            {/* ///////////// DASHBOARD /////////// */}
             {/* CARDS -- START */}
             <div className="cards-container_scroll-x">
               <div className="cards-container">
@@ -54,6 +58,8 @@ const MainContainer = () => {
             <Table />
             <Table />
             <Table />
+            {/* ///////////// DASHBOARD /////////// */}
+            {/* /////////////////////////////////// */}
           </div>
         </div>
         {/* MAIN CONTENT -- END */}
