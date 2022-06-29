@@ -12,7 +12,7 @@ const MenuItem = ({ handleClick, item, name }) => {
   const { current } = ref;
 
   const updateItem = () => {
-    handleClick();
+    // handleClick();
     setIsActive(true);
     current.classList.add('active_menu-item');
     current
