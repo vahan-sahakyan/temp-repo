@@ -23,6 +23,10 @@
   left: 0;
   width: 100%;
   height: 100%;
+
+  & > section {
+    margin-top: 64px;
+  }
 }
 
 .main-content_header {
@@ -63,10 +67,18 @@
 .ant-tabs-top {
   margin-top: 64px;
 }
+.ant-tabs-nav-operations {
+  display: none;
+}
+.ant-tabs-nav-list::-webkit-scrollbar {
+  display: none;
+}
 .ant-tabs-nav-list {
   font-size: 1em;
   display: flex;
   background-color: #fff;
+
+  overflow-x: scroll;
 
   // FIXED-PANEL
   background-color: #fff;
@@ -111,6 +123,6 @@
   outline: none;
 }
 .tab-content {
-  margin-top: -20px;
+  // margin-top: -20px;
   // border: 2px solid orangered;
 }

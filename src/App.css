@@ -22,11 +22,13 @@ CARDS: {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #0004;
+  /* background: #0004; */
+  background: #13334aee;
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #0007;
+  /* background: #0007; */
+  background: #13334aff;
 }
 
 .App {
