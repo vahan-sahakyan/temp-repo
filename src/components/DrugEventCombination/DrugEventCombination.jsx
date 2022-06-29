@@ -24,7 +24,7 @@ const DrugEventCombination = () => {
       <div className="main-content">
         <div className="fixed-panel">
           <header className="main-content_header">
-            <h3 className="main-content_title">DrugEventCombination</h3>
+            <h3 className="main-content_title">Drug Event Combination</h3>
           </header>
         </div>
         <section style={{ backgroundColor: 'white', padding: '2em' }} className="drug-event-combination">
