@@ -1,9 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const MenuItem = ({ handleClick, item, text, isActiveProp }) => {
+const MenuItem = ({ handleClick, item, name }) => {
+  const location = useLocation();
+  const pathname = location.pathname.slice(1);
+  // setting active style based on pathname, for reloading
+  const [isActive, setIsActive] = useState(pathname === name.toLowerCase().replaceAll(' ', '-'));
+  console.log(pathname);
+
   const ref = useRef();
   const { current } = ref;
-  const [isActive, setIsActive] = useState(isActiveProp);
 
   const updateItem = () => {
     handleClick();
@@ -21,7 +27,7 @@ const MenuItem = ({ handleClick, item, text, isActiveProp }) => {
   return (
     <li ref={ref} onClick={updateItem} className={isActive ? 'active_menu-item' : ''}>
       {item}
-      <p className="menu-item_text">{text}</p>
+      <p className="menu-item_text">{name}</p>
     </li>
   );
 };

@@ -2,10 +2,14 @@ import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from
 import MenuItem from './MenuItem';
 import { HomeOL, HomeSD, FileOL, FileSD, CircleOL, CircleSD, ChartOL, ChartSD } from './menu-icons';
 import './TheSidebar.scss';
+import { Link, useLocation, useParams, useRouteMatch, withRouter } from 'react-router-dom';
 
 const GITHUB_URL = 'https://vahan-sahakyan.github.io/dashboard/';
 
-const TheSidebar = () => {
+const TheSidebar = ({ match, history }) => {
+  const location = useLocation();
+  const pathname = location.pathname.slice(1);
+  console.log(pathname);
   let logo, toggleSidebar, sidebar;
 
   const updateToggleIcon = () => {
@@ -77,15 +81,23 @@ const TheSidebar = () => {
           id="toggle-sidebar"
           ref={toggleSidebarRef => (toggleSidebar = toggleSidebarRef)}
           alt="close"
-          src={GITHUB_URL + 'assets/icons/more.png'}
+          src={GITHUB_URL + 'assets/icons/close.png'}
         />
       </div>
 
       <ul onMouseEnter={openSidebar} className="menu-items">
-        <MenuItem handleClick={closeSidebar} item={<HomeOL />} text="Home" isActiveProp={true} />
-        <MenuItem handleClick={closeSidebar} item={<FileSD />} text="Projects" />
-        <MenuItem handleClick={closeSidebar} item={<CircleSD />} text="Signals" />
-        <MenuItem handleClick={closeSidebar} item={<ChartSD />} text="Drug Event Combination" />
+        <Link to="/home">
+          <MenuItem handleClick={closeSidebar} item={<HomeOL />} name="Home" />
+        </Link>
+        <Link to="/projects">
+          <MenuItem handleClick={closeSidebar} item={<FileSD />} name="Projects" />
+        </Link>
+        <Link to="/signals">
+          <MenuItem handleClick={closeSidebar} item={<CircleSD />} name="Signals" />
+        </Link>
+        <Link to="/drug-event-combination">
+          <MenuItem handleClick={closeSidebar} item={<ChartSD />} name="Drug Event Combination" />
+        </Link>
       </ul>
     </aside>
   );

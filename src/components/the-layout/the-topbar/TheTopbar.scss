@@ -4,61 +4,71 @@
   align-items: center;
   /* padding: 1.1em; */
   padding: 0.6em 1.1em;
-  background-color: #fff0;
+  background-color: #f5f5f5;
+  z-index: 3;
+  // border-bottom: 1px solid #0002;
+
   /* box-shadow: 0px 0px 10px #0002; */
-}
-.topbar button {
-  height: 1em;
-  font-size: 1em;
-}
-.topbar_icons button:nth-child(1) {
-  font-size: 0.9em;
-  margin-right: 3px;
-}
-.topbar_icons button:nth-child(3) {
-  font-size: 1.15em;
-}
-.topbar_icons {
-  /* border-right: 1px solid #0001; */
-  /* padding-right: 1.2em; */
 
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 1.4em;
-  margin-right: 1em;
-}
-.topbar_icons button:focus,
-.topbar_icons button:hover {
-  filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(80%) contrast(96%);
-}
-.topbar_icons img {
-  filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(130%) contrast(96%);
-  font-size: 1em;
-  height: 1em;
-  width: 1em;
-}
-.user:hover {
-  color: #000;
-  cursor: pointer;
-}
-.user {
-  font-size: 14px;
-  border-left: 1px solid #0001;
-  padding-left: 1.2em;
+  button {
+    height: 1em;
+    font-size: 1em;
+  }
 
-  color: #666;
-  display: flex;
-  align-items: center;
-  gap: 0.8em;
-}
-.user_avatar {
-  background-color: #444;
-  background-image: url('../../../assets/avatars/mock-avatar.jpeg');
-  background-repeat: no-repeat;
-  background-size: 38px;
-  vertical-align: middle;
-  height: 38px;
-  width: 38px;
-  border-radius: 50px;
+  button:nth-child(1) {
+    font-size: 0.9em;
+    margin-right: 3px;
+  }
+  button:nth-child(3) {
+    font-size: 1.15em;
+  }
+
+  button:focus,
+  button:hover {
+    filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(80%) contrast(96%);
+  }
+
+  .topbar_icons {
+    // border-right: 1px solid #0001;
+    /* padding-right: 1.2em; */
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.4em;
+    margin-right: 1em;
+  }
+
+  .topbar_icons img {
+    filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(130%) contrast(96%);
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+  }
+
+  .user {
+    font-size: 14px;
+    border-left: 1px solid #0001;
+    padding-left: 1.2em;
+
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+
+    &:hover {
+      color: #000;
+      cursor: pointer;
+    }
+    .user_avatar {
+      background-color: #444;
+      background-image: url('../../../assets/avatars/mock-avatar.jpeg');
+      background-repeat: no-repeat;
+      background-size: 38px;
+      vertical-align: middle;
+      height: 38px;
+      width: 38px;
+      border-radius: 50px;
+    }
+  }
 }

@@ -40,7 +40,9 @@ html {
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
-
+a {
+  text-decoration: none;
+}
 button {
   outline: none;
   border: none;
@@ -62,8 +64,19 @@ button {
 }
 
 .global-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
   min-height: 100vh;
+}
+.sidebar {
+  grid-row: 1 / -1;
+}
+.topbar {
+  grid-column: 2 / -1;
+}
+.main-container {
+  grid-column: 2 / -1;
 }
 
 /* ALERTS */

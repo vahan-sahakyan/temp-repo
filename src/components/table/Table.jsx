@@ -2,7 +2,7 @@ import React from 'react';
 import './Table.scss';
 
 const Table = () => (
-  <>
+  <div className="mock-tables">
     {/* ELEM TABLE -- START */}
     <h4 className="table-header">Approved Reports</h4>
     <div className="scroll-x">
@@ -100,7 +100,7 @@ const Table = () => (
       </table>
     </div>
     {/* TABLE -- END */}
-  </>
+  </div>
 );
 
 export default Table;
