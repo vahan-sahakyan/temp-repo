@@ -94,9 +94,9 @@ const TheSidebar = ({ match, history }) => {
         <Link to="/signals">
           <MenuItem handleClick={closeSidebar} item={<CircleSD />} name="Signals" />
         </Link>
-        <Link to="/drug-event-combination">
+        {/* <Link to="/drug-event-combination">
           <MenuItem handleClick={closeSidebar} item={<ChartSD />} name="Drug Event Combination" />
-        </Link>
+        </Link> */}
       </ul>
     </aside>
   );
