@@ -17,7 +17,14 @@ const MockSample = ({ name }) => (
   </div>
 );
 const MockContent = ({ name }) => (
-  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '5vw', padding: '2em 2vw' }}>
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '5vw',
+      padding: '2em 2vw',
+    }}
+  >
     <MockSample name={name} />
     <MockSample name={name} />
     <MockSample name={name} />

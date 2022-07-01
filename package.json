@@ -10,6 +10,8 @@
     "antd": "^4.19.5",
     "axios": "^0.26.0",
     "chart.js": "^3.7.1",
+    "chartjs-plugin-datalabels": "^2.0.0",
+    "chartjs-plugin-doughnutlabel": "^2.0.3",
     "css-select": "^4.3.0",
     "css-what": "^6.0.1",
     "formik": "^2.2.9",

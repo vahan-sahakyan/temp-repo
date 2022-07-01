@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from '../table/Table';
+import './Dashboard.scss';
 
 const Dashboard = () => {
   return (

@@ -59,13 +59,12 @@ const TheSidebar = ({ match, history }) => {
     setIsClosed(true);
   };
 
-  useLayoutEffect(() => {
-    toggleOnClickHandler();
+  useEffect(() => {
+    // toggleOnClickHandler();
     console.log(new Date());
     ///////////////////////////////////////////////////
     // console.log('DEBUG:', logo);
   }, []);
-
   return (
     <aside
       ref={sidebarRef => (sidebar = sidebarRef)}
