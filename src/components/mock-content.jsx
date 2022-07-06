@@ -1,5 +1,5 @@
 import React from 'react';
-const MockSample = ({ name }) => (
+export const MockSample = ({ name }) => (
   <div>
     <br />
     <h3 style={{ color: '#134' }}>{name.toUpperCase()}</h3>
@@ -16,7 +16,7 @@ const MockSample = ({ name }) => (
     <br />
   </div>
 );
-const MockContent = ({ name }) => (
+export const MockContent = ({ name }) => (
   <div
     style={{
       display: 'grid',
