@@ -2,7 +2,7 @@ import React from 'react';
 const MockSample = ({ name }) => (
   <div>
     <br />
-    <h3 style={{ color: '#444' }}>{name.toUpperCase()}</h3>
+    <h3 style={{ color: '#134' }}>{name.toUpperCase()}</h3>
     <h5 style={{ color: 'green' }}>MOCK CONTENT to fill up space FOR TESTING</h5>
     <br />
     <p>

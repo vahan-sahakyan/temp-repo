@@ -4,28 +4,40 @@
   align-items: center;
   /* padding: 1.1em; */
   padding: 0.6em 1.1em;
-  background-color: #f5f5f5;
+  background-color: #eefa;
   z-index: 3;
   // border-bottom: 1px solid #0002;
 
   /* box-shadow: 0px 0px 10px #0002; */
 
-  button {
-    height: 1em;
-    font-size: 1em;
+  button svg {
+    fill: #bcbccb;
+    height: 1.2em;
+    line-height: 1.3em;
   }
 
-  button:nth-child(1) {
-    font-size: 0.9em;
+  .settings-icon svg {
     margin-right: 3px;
   }
-  button:nth-child(3) {
-    font-size: 1.15em;
+  .notification-icon {
+    position: relative;
+  }
+  .notification-dot {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #f5f5f5;
+    background-color: #ffc06a;
   }
 
-  button:focus,
-  button:hover {
-    filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(80%) contrast(96%);
+  button:focus svg,
+  button:hover svg {
+    // filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(80%) contrast(96%);
+    fill: #ffc06a;
   }
 
   .topbar_icons {
@@ -37,13 +49,6 @@
     align-items: center;
     gap: 1.4em;
     margin-right: 1em;
-  }
-
-  .topbar_icons img {
-    filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(130%) contrast(96%);
-    font-size: 1em;
-    height: 1em;
-    width: 1em;
   }
 
   .user {
