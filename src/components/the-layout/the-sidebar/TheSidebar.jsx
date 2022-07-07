@@ -86,13 +86,13 @@ const TheSidebar = ({ match, history }) => {
 
       <ul onMouseEnter={openSidebar} className="menu-items">
         <Link to="/home">
-          <MenuItem handleClick={closeSidebar} item={<HomeOL />} name="Home" />
+          <MenuItem active={pathname === 'home'} handleClick={closeSidebar} item={<HomeOL />} name="Home" />
         </Link>
         <Link to="/projects">
-          <MenuItem handleClick={closeSidebar} item={<FileSD />} name="Projects" />
+          <MenuItem active={pathname === 'projects'} handleClick={closeSidebar} item={<FileSD />} name="Projects" />
         </Link>
         <Link to="/signals">
-          <MenuItem handleClick={closeSidebar} item={<CircleSD />} name="Signals" />
+          <MenuItem active={pathname === 'signals'} handleClick={closeSidebar} item={<CircleSD />} name="Signals" />
         </Link>
         {/* <Link to="/drug-event-combination">
           <MenuItem handleClick={closeSidebar} item={<ChartSD />} name="Drug Event Combination" />

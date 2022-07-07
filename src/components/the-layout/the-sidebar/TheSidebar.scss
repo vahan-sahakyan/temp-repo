@@ -76,31 +76,7 @@
   // width: 300px;
 
   color: #fff;
-  background-color: #173951;
   background-color: #13334a;
-
-  li {
-    color: #89a;
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    padding: 1.2em 1.4em;
-    border-left: 5px solid #0000;
-    overflow-x: hidden;
-  }
-  li i {
-    min-width: 16px;
-  }
-
-  li:hover,
-  li:focus,
-  li.active_menu-item {
-    color: #3fa9f5;
-    color: #fff;
-    background-color: #1112;
-    border-left: 5px solid #3fa9f5;
-    cursor: pointer;
-  }
 }
 
 .menu-items {
