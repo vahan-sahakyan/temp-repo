@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import { Sticky, StickyContainer } from 'react-sticky';
 import './AdminSettings.scss';
 import MockContent, { MockSample } from '../mock-content';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 const { TabPane } = Tabs;
 
 const AdminSettings = () => {
+  const history = useHistory();
   const [selectedTab, setSelectedTab] = useState(1);
   const onNavTabClick = key => {
     setSelectedTab(key);
@@ -24,18 +25,18 @@ const AdminSettings = () => {
         <div className="main-content">
           <div className="fixed-panel">
             <header className="main-content_header">
-              <Link to="/">
+              <div style={{ cursor: 'pointer' }} onClick={history.goBack}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   className="chevron-left"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
-              </Link>
+              </div>
               <h3 className="main-content_title">Admin Settings</h3>
             </header>
           </div>
