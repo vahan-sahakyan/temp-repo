@@ -1,7 +1,7 @@
 import React from 'react';
 
 // HOME
-export const HomeOL = () => (
+export const HomeOutlineSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="menu-item_icon "
@@ -17,14 +17,14 @@ export const HomeOL = () => (
     />
   </svg>
 );
-export const HomeSD = () => (
+export const HomeSolidSVG = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="menu-item_icon " viewBox="0 0 20 20" fill="currentColor">
     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
   </svg>
 );
 
 // FILE
-export const FileOL = () => (
+export const FileOutlineSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="menu-item_icon"
@@ -40,7 +40,7 @@ export const FileOL = () => (
     />
   </svg>
 );
-export const FileSD = () => (
+export const FileSolidSVG = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="menu-item_icon" viewBox="0 0 20 20" fill="currentColor">
     <path
       fillRule="evenodd"
@@ -51,7 +51,7 @@ export const FileSD = () => (
 );
 
 // CIRCLE
-export const CircleOL = () => (
+export const CircleOutlineSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="menu-item_icon"
@@ -63,7 +63,7 @@ export const CircleOL = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
 );
-export const CircleSD = () => (
+export const CircleSolidSVG = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="menu-item_icon" viewBox="0 0 20 20" fill="currentColor">
     <path
       fillRule="evenodd"
@@ -74,7 +74,7 @@ export const CircleSD = () => (
 );
 
 // CHART
-export const ChartOL = () => (
+export const ChartOutlineSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className="menu-item_icon"
@@ -90,7 +90,7 @@ export const ChartOL = () => (
     />
   </svg>
 );
-export const ChartSD = () => (
+export const ChartSolidSVG = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="menu-item_icon" viewBox="0 0 20 20" fill="currentColor">
     <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
   </svg>

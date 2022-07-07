@@ -39,46 +39,6 @@
   }
 }
 
-.closed.sidebar {
-  width: 4.6em;
-
-  .menu-item_text {
-    /* display: none; */
-    /* visibility: hidden; */
-    opacity: 0;
-    transition: 300ms;
-  }
-
-  h1 {
-    /* display: none; */
-    /* visibility: hidden; */
-    opacity: 0;
-    transition: 300ms;
-  }
-}
-
-.open.sidebar {
-  width: 240px;
-
-  .menu-item_text {
-    /* display: flex; */
-    transition: 150ms;
-  }
-
-  h1 {
-    display: flex;
-    transition: 300ms;
-  }
-}
-
-.sidebar {
-  transition: 500ms;
-  // width: 300px;
-
-  color: #fff;
-  background-color: #13334a;
-}
-
 .menu-items {
   height: 100%;
 }
