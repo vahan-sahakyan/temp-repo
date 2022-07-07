@@ -50,7 +50,9 @@ const TheSidebar = ({ match, history }) => {
   return (
     <SidebarStyled isClosed={isClosed} onMouseLeave={() => !isClicked && closeSidebar()} className="sidebar">
       <div className="sidebar-head">
-        <h1 id="logo">SIGNAL AI</h1>
+        <Link to="/home">
+          <h1 id="logo">SIGNAL AI</h1>
+        </Link>
         <img
           onClick={toggleOnClickHandler}
           id="toggle-sidebar"
