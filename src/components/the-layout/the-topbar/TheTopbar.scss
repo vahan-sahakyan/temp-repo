@@ -9,15 +9,15 @@
   // border-bottom: 1px solid #0002;
 
   /* box-shadow: 0px 0px 10px #0002; */
-  button {
-    display: flex;
-    align-items: center;
-  }
-  button svg {
-    fill: #bcbccb;
-    height: 1.2em;
-    line-height: 1.3em;
-  }
+  // button {
+  //   display: flex;
+  //   align-items: center;
+  // }
+  // button svg {
+  //   fill: #bcbccb;
+  //   height: 1.2em;
+  //   line-height: 1.3em;
+  // }
 
   .notification-icon {
     position: relative;
@@ -34,11 +34,11 @@
     background-color: #ffc06a;
   }
 
-  button:focus svg,
-  button:hover svg {
-    // filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(80%) contrast(96%);
-    fill: #ffc06a;
-  }
+  // button:focus svg,
+  // button:hover svg {
+  //   // filter: invert(53%) sepia(6%) saturate(11%) hue-rotate(320deg) brightness(80%) contrast(96%);
+  //   fill: #ffc06a;
+  // }
 
   .topbar_icons {
     // border-right: 1px solid #0001;

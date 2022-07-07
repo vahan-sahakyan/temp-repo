@@ -17,7 +17,7 @@ const MainContainer = () => {
         <Route path="/signals" component={Signals} />
         <Route path="/admin-settings" component={AdminSettings} />
         {/* <Route path="/drug-event-combination" component={DrugEventCombination} /> */}
-        <Redirect from="/" to="/home" />
+        {/* <Redirect from="/" to="/home" /> */}
       </Switch>
     </div>
   );

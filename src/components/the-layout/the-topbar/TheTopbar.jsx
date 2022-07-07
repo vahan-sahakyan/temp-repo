@@ -1,12 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './TheTopbar.scss';
+import { TopbarButton } from './topbar-button.styles';
 
 const TheTopbar = () => {
+  const location = useLocation();
+  const pathname = location.pathname.slice(1);
+  console.log(pathname);
   return (
     <nav className="topbar">
       <div className="topbar_icons">
-        <button className="support-icon">
+        <TopbarButton active={pathname === 'support'} className="support-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path
               fill-rule="evenodd"
@@ -14,9 +18,9 @@ const TheTopbar = () => {
               clip-rule="evenodd"
             />
           </svg>
-        </button>
+        </TopbarButton>
         <Link to="/admin-settings">
-          <button className="settings-icon">
+          <TopbarButton active={pathname === 'admin-settings'} className="settings-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path
                 fill-rule="evenodd"
@@ -24,15 +28,15 @@ const TheTopbar = () => {
                 clip-rule="evenodd"
               />
             </svg>
-          </button>
+          </TopbarButton>
         </Link>
 
-        <button className="notification-icon">
+        <TopbarButton active={pathname === 'notifications'} className="notification-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
           </svg>
           <span className="notification-dot">&nbsp;</span>
-        </button>
+        </TopbarButton>
       </div>
       <div className="user">
         <span className="user_name"> Bharath Reddy</span>
