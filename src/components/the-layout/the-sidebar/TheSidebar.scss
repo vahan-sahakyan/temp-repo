@@ -58,7 +58,7 @@
 }
 
 .open.sidebar {
-  width: 300px;
+  width: 240px;
 
   .menu-item_text {
     /* display: flex; */
@@ -73,14 +73,14 @@
 
 .sidebar {
   transition: 500ms;
-  /* width: 300px; */
+  // width: 300px;
 
   color: #fff;
   background-color: #173951;
   background-color: #13334a;
 
   li {
-    color: #999;
+    color: #89a;
     display: flex;
     align-items: center;
     gap: 1em;

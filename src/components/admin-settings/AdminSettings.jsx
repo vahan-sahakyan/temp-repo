@@ -6,25 +6,6 @@ import MockContent, { MockSample } from '../mock-content';
 import { Link } from 'react-router-dom';
 const { TabPane } = Tabs;
 
-// const AdminSettings = () => {
-//   const [tabPosition, setTabPosition] = useState('left');
-
-//   return (
-//     <div>
-//       <Tabs tabPosition={tabPosition}>
-//         <TabPane tab="Tab 1" key="1">
-//           Content of Tab 1
-//         </TabPane>
-//         <TabPane tab="Tab 2" key="2">
-//           Content of Tab 2
-//         </TabPane>
-//         <TabPane tab="Tab 3" key="3">
-//           Content of Tab 3
-//         </TabPane>
-//       </Tabs>
-//     </div>
-//   );
-// };
 const AdminSettings = () => {
   const [selectedTab, setSelectedTab] = useState(1);
   const onNavTabClick = key => {
@@ -64,7 +45,6 @@ const AdminSettings = () => {
                 <div className="tab-content">
                   {/* <Tab1 /> */}
                   <h2>General Settings</h2>
-                  {/* <h1>General Settings</h1> */}
                 </div>
               </TabPane>
               <TabPane tab="Drug Profile" key="2">
@@ -81,14 +61,13 @@ const AdminSettings = () => {
               </TabPane>
               <TabPane tab="Report Configuration" key="4">
                 <div className="tab-content">
-                  {/* <Tab3 /> */}
+                  {/* <Tab4 /> */}
                   <h2>Report Configuration</h2>
                 </div>
               </TabPane>
               <TabPane tab="Database Settings" key="5">
                 <div className="tab-content">
-                  {/* <Tab3 /> */}
-
+                  {/* <Tab5 /> */}
                   <h2>Database Settings</h2>
                 </div>
               </TabPane>
