@@ -4,6 +4,7 @@ import { Sticky, StickyContainer } from 'react-sticky';
 import './AdminSettings.scss';
 import MockContent, { MockSample } from '../mock-content';
 import { Link, useHistory } from 'react-router-dom';
+import DrugProfile from './DrugProfile';
 const { TabPane } = Tabs;
 
 const AdminSettings = () => {
@@ -45,31 +46,32 @@ const AdminSettings = () => {
               <TabPane tab="General Settings" key="1">
                 <div className="tab-content">
                   {/* <Tab1 /> */}
-                  <h2>General Settings</h2>
+                  <h3>General Settings</h3>
                 </div>
               </TabPane>
               <TabPane tab="Drug Profile" key="2">
                 <div className="tab-content">
                   {/* <Tab2 /> */}
-                  <h2>Drug Profile</h2>
+                  <h3>Drug Profile</h3>
+                  <DrugProfile />
                 </div>
               </TabPane>
               <TabPane tab="Access Management" key="3">
                 <div className="tab-content">
                   {/* <Tab3 /> */}
-                  <h2>Access Management</h2>
+                  <h3>Access Management</h3>
                 </div>
               </TabPane>
               <TabPane tab="Report Configuration" key="4">
                 <div className="tab-content">
                   {/* <Tab4 /> */}
-                  <h2>Report Configuration</h2>
+                  <h3>Report Configuration</h3>
                 </div>
               </TabPane>
               <TabPane tab="Database Settings" key="5">
                 <div className="tab-content">
                   {/* <Tab5 /> */}
-                  <h2>Database Settings</h2>
+                  <h3>Database Settings</h3>
                 </div>
               </TabPane>
             </Tabs>

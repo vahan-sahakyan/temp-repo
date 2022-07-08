@@ -6,13 +6,17 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 // import ChartDoughnutLabel from 'chartjs-plugin-doughnutlabel';
+console.log(ChartDataLabels);
+Legend.defaults.position = 'bottom';
+Legend.defaults.labels.boxWidth = 15;
+Legend.defaults.labels.usePointStyle = true;
 
 ChartJS.register(ArcElement, Tooltip, Legend);
+
 // const SAMPLE = {
 //   labels: ['Not Mentioned', 'Female', 'Male', '35-45 Years', 'N/A', 'Non Serious', 'Serious'],
 //   datasets: [
 //     {
-//       label: '# of Votes',
 //       data: paddedData([12, 19, 3, 5, 2, 3]),
 //       backgroundColor: ['#EC6666', '#79D2DE', '#147AD6', '#81D9DA', '#1E3BB3', '#65D471', '#FB5C5C'],
 //     },
@@ -20,22 +24,22 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 // };
 const paddedData = arr => arr.map(num => (num > 9 ? num : ` ${num} `));
 const casesByGender = {
-  labels: ['Not Mentioned', 'Female', 'Male'],
+  labels: ['Male', 'Female', 'Not Mentioned'],
   datasets: [
     {
       // label: '# of Votes',
-      data: paddedData([1, 4, 5]),
-      backgroundColor: ['#EC6666', '#79D2DE', '#147AD6'],
+      data: paddedData([5, 4, 1]),
+      backgroundColor: ['#147AD6', '#79D2DE', '#EC6666'],
     },
   ],
 };
 const casesByAge = {
-  labels: ['35-45 Years', 'N/A'],
+  labels: ['N/A', '35-45 Years'],
   datasets: [
     {
       // label: '# of Votes',
-      data: paddedData([6, 8]),
-      backgroundColor: ['#81D9DA', '#1E3BB3'],
+      data: paddedData([8, 6]),
+      backgroundColor: ['#1E3BB3', '#81D9DA'],
     },
   ],
 };
@@ -54,8 +58,8 @@ const doughnutGeneralOptions = {
     ChartDataLabels,
     //  ChartDoughnutLabel
   ],
-
   options: {
+    // OLD
     responsive: true,
     tooltip: {
       display: false,
@@ -65,9 +69,9 @@ const doughnutGeneralOptions = {
         display: true,
         backgroundColor: '#fff',
 
-        borderColor: '#aaa',
+        borderColor: '#aaa3',
         borderRadius: 50,
-        borderWidth: 1,
+        borderWidth: 2,
 
         anchor: 'end',
         align: 'center',
@@ -78,6 +82,7 @@ const doughnutGeneralOptions = {
           size: '15',
         },
       },
+      // Inner info
       doughnutlabel: {
         labels: [
           {
