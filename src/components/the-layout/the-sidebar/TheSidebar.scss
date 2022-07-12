@@ -1,5 +1,6 @@
 .sidebar {
   background-color: #13334a;
+  font-size: 16px;
   .sidebar-head {
     display: flex;
     align-items: center;
@@ -59,6 +60,7 @@
   }
 
   .menu-item_text {
+    margin: 0;
     /* padding-right: 2em; */
     white-space: nowrap;
   }
