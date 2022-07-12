@@ -39,7 +39,7 @@
   padding: 30px 4vw;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1180px) {
   .cards-container_scroll-x {
     overflow-x: scroll;
 
@@ -56,7 +56,7 @@
   .cards-container {
     display: flex;
     justify-content: start;
-    gap: 15px;
+    gap: 30px;
     padding: 30px 4vw;
     margin-right: 60em;
   }

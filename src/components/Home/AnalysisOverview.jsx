@@ -7,6 +7,10 @@ import DemoLine from './trend-chart';
 import { Doughnut } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 // import ChartDoughnutLabel from 'chartjs-plugin-doughnutlabel';
+
+import { Select } from 'antd';
+const { Option } = Select;
+
 console.log(ChartDataLabels);
 Legend.defaults.position = 'bottom';
 Legend.defaults.labels.boxWidth = 15;
@@ -94,28 +98,29 @@ const doughnutGeneralOptions = {
 };
 
 const AnalysisOverview = () => {
-  const chartsContainer = {
-    display: 'flex',
-    justifyItems: 'center',
-    gridTemplateColumns: '1fr 1fr 1fr',
-    gap: '2em',
-    maxWidth: '100vw',
-    backgroundColor: '#f5f5f5',
-    padding: '2em',
-  };
-
-  const chart = {
-    backgroundColor: '#fff',
-    width: '30vw',
-    height: 'max-content',
-    // padding: '2em',
-    margin: '0 auto',
-  };
-
+  const drugs = ['Abilify', 'Abatacept', 'Metformin'];
+  const events = ['Diziness', 'Asthma', 'Arthralgia'];
   return (
     <section style={{ backgroundColor: 'white', padding: '0 0' }} className="analysis-overview">
-      {/* <div style={chartsContainer}> */}
-      <div className="donuts-container_scroll-x">
+      <div style={{ backgroundColor: '#f5f5fa' }} className="donuts-container_scroll-x">
+        <div style={{ padding: '1.5em 2em' }} className="donut-selects-container">
+          <div className="donut-select">
+            <span>Drug</span>
+            <Select allowClear placeholder="Drug" style={{ width: 200 }}>
+              {drugs.map(drug => (
+                <Option value={drug}>{drug}</Option>
+              ))}
+            </Select>
+          </div>
+          <div className="donut-select">
+            <span>Event</span>
+            <Select placeholder="Event" style={{ width: 200 }}>
+              {events.map(event => (
+                <Option value={event}>{event}</Option>
+              ))}
+            </Select>
+          </div>
+        </div>
         <div className="donuts-container">
           <div className="donut">
             <Doughnut data={casesByGender} {...doughnutGeneralOptions} />
@@ -129,12 +134,9 @@ const AnalysisOverview = () => {
         </div>
       </div>
 
-      {/* </div> 
-      /////////
-      */}
-      <div className="trend-container">
+      <div style={{ backgroundColor: '#fff' }} className="trend-container">
         <div className="trend-info">
-          <h1 style={{ padding: '28px' }}>Trend Analysis</h1>
+          <h1>Trend Analysis</h1>
         </div>
 
         <div className="trend">

@@ -10,7 +10,7 @@ const DemoLine = () => {
   const data = [
     ...months.map(gago => ({
       month: gago,
-      value: parseInt(Math.random() * 1500),
+      value: parseInt(Math.random() * 500),
     })),
   ];
 
