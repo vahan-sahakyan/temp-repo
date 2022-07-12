@@ -32,8 +32,5 @@ const getSidebarStyles = ({ isClosed }) => (isClosed ? closedSidebarStyles : ope
 export const SidebarStyled = styled.aside`
   transition: 500ms;
 
-  color: #fff;
-  background-color: #13334a;
-
   ${getSidebarStyles}
 `;
