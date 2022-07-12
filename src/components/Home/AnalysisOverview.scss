@@ -1,4 +1,4 @@
-canvas {
+.donut > canvas {
   width: 300px !important;
   height: 300px !important;
 
@@ -7,7 +7,22 @@ canvas {
   margin: 0 auto;
   // overflow: visible !important;
 }
-.chart {
+.trend-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.trend-info {
+}
+.trend {
+  width: 70vw !important;
+  height: 20vw !important;
+
+  padding: 1em;
+  // margin: 0 auto;
+  margin-left: auto;
+  // overflow: visible !important;
+}
+.donut {
   background-color: #fff;
   width: 400px !important;
   height: 300px !important;
@@ -15,7 +30,7 @@ canvas {
   margin: 0 auto;
 }
 
-.charts-container {
+.donuts-container {
   display: flex;
   justify-items: space-around;
   // grid-template-columns: 1fr 1fr 1fr;
@@ -25,7 +40,7 @@ canvas {
   padding: 2em 2vw;
 }
 @media (max-width: 1150px) {
-  .charts-container_scroll-x {
+  .donuts-container_scroll-x {
     overflow-x: scroll;
     background-color: #f5f5fa;
 
@@ -39,7 +54,7 @@ canvas {
     }
   }
 
-  .charts-container {
+  .donuts-container {
     background-color: #f5f5fa;
 
     display: flex;
@@ -49,7 +64,7 @@ canvas {
 
     margin-right: 65em;
   }
-  .chart {
+  .donut {
     // background-color: #f5f5fa;
   }
 }

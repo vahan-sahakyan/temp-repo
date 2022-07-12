@@ -3,6 +3,7 @@ import './AnalysisOverview.scss';
 import Table from '../table/Table';
 import MockContent from '../mock-content';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import DemoLine from './trend-chart';
 import { Doughnut } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 // import ChartDoughnutLabel from 'chartjs-plugin-doughnutlabel';
@@ -13,15 +14,6 @@ Legend.defaults.labels.usePointStyle = true;
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-// const SAMPLE = {
-//   labels: ['Not Mentioned', 'Female', 'Male', '35-45 Years', 'N/A', 'Non Serious', 'Serious'],
-//   datasets: [
-//     {
-//       data: paddedData([12, 19, 3, 5, 2, 3]),
-//       backgroundColor: ['#EC6666', '#79D2DE', '#147AD6', '#81D9DA', '#1E3BB3', '#65D471', '#FB5C5C'],
-//     },
-//   ],
-// };
 const paddedData = arr => arr.map(num => (num > 9 ? num : ` ${num} `));
 const casesByGender = {
   labels: ['Male', 'Female', 'Not Mentioned'],
@@ -123,21 +115,33 @@ const AnalysisOverview = () => {
   return (
     <section style={{ backgroundColor: 'white', padding: '0 0' }} className="analysis-overview">
       {/* <div style={chartsContainer}> */}
-      <div className="charts-container_scroll-x">
-        <div className="charts-container">
-          <div className="chart">
+      <div className="donuts-container_scroll-x">
+        <div className="donuts-container">
+          <div className="donut">
             <Doughnut data={casesByGender} {...doughnutGeneralOptions} />
           </div>
-          <div className="chart">
+          <div className="donut">
             <Doughnut data={casesByAge} {...doughnutGeneralOptions} />
           </div>
-          <div className="chart">
+          <div className="donut">
             <Doughnut data={casesBySeriousness} {...doughnutGeneralOptions} />
           </div>
         </div>
       </div>
-      {/* </div> */}
-      <MockContent name="analysis overview" />
+
+      {/* </div> 
+      /////////
+      */}
+      <div className="trend-container">
+        <div className="trend-info">
+          <h1 style={{ padding: '28px' }}>Trend Analysis</h1>
+        </div>
+
+        <div className="trend">
+          <DemoLine />
+        </div>
+      </div>
+      {/* <MockContent name="analysis overview" /> */}
     </section>
   );
 };
