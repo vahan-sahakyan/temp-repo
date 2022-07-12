@@ -22,6 +22,7 @@
   }
   .tab-content {
     padding: 0;
+
     h3 {
       padding: 0.55em 1em;
       font-weight: 600;
@@ -32,6 +33,7 @@
     flex-direction: row;
     min-height: 85vh;
     background-color: #fff;
+    margin-top: 53px;
   }
   .ant-tabs > div:first-of-type {
     // width: 10vw;
@@ -47,13 +49,16 @@
   }
 
   .ant-tabs-nav-list {
-    display: flex;
+    // display: flex;
     flex-direction: column;
     // width: 20vw;
   }
 
   .ant-tabs-tab {
+    display: block !important;
     border-bottom: 1px solid #eee;
+    margin: 0 !important;
+    padding: 1em 3em 1em 2em;
   }
   .ant-tabs-tab:hover,
   .ant-tabs-tab-active {

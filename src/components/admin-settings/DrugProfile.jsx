@@ -21,23 +21,14 @@ const columns = [
     render: (_, { brandNames }) => (
       <>
         {brandNames.map(brandName => {
-          let color = brandName.length > 5 ? 'geekblue' : 'green';
+          let color = brandName.length > 6 ? 'geekblue' : 'green';
 
           if (brandName === 'loser') {
             color = 'volcano';
           }
 
           return (
-            <Tag
-              style={{
-                padding: '0 .3em',
-                border: '1px solid #3FA9F5',
-                borderRadius: '4px',
-                marginRight: '3px',
-              }}
-              color={color}
-              key={brandName}
-            >
+            <Tag color={color} key={brandName}>
               {brandName}
             </Tag>
           );
