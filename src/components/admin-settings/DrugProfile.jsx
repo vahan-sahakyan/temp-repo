@@ -7,17 +7,21 @@ const columns = [
     title: 'UID',
     dataIndex: 'uid',
     key: 'uid',
+    align: 'center',
     render: text => <button style={{ color: '#3FA9F5' }}>{text}</button>,
   },
   {
     title: 'DRUG NAME',
     dataIndex: 'drugName',
     key: 'drugName',
+    align: 'center',
   },
   {
     title: 'BRAND NAMES',
     dataIndex: 'brandNames',
     key: 'brandNames',
+    align: 'center',
+
     render: (_, { brandNames }) => (
       <>
         {brandNames.map(brandName => {
@@ -40,10 +44,13 @@ const columns = [
     title: 'SIGNAL SCHEDULE',
     key: 'signalSchedule',
     dataIndex: 'signalSchedule',
+    align: 'center',
   },
   {
     title: 'ACTIONS',
     key: 'actions',
+    align: 'center',
+
     render: (_, record) => (
       <Space size="middle">
         <button>
