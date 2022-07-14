@@ -33,7 +33,7 @@ const TheTopbar = () => {
       <div className="user">
         <span className="user_name"> Bharath Reddy</span>
         <i className="fa-solid fa-chevron-down"></i>
-        <div className="user_avatar"></div>
+        <img className="user_avatar" src="/assets/avatars/mock-avatar.jpeg" alt="user_avatar" />
       </div>
       {/* USER END */}
     </nav>

@@ -5,8 +5,6 @@ import './TheSidebar.scss';
 import { Link, useLocation, useParams, useRouteMatch, withRouter } from 'react-router-dom';
 import { SidebarStyled } from './the-sidebar.styles';
 
-const GITHUB_URL = 'https://vahan-sahakyan.github.io/dashboard/';
-
 const TheSidebar = ({ match, history }) => {
   const location = useLocation();
   const pathname = location.pathname.slice(1);
@@ -15,8 +13,8 @@ const TheSidebar = ({ match, history }) => {
 
   const updateToggleIcon = () => {
     isClosed === true
-      ? (toggleSidebarIMG.current.src = `${GITHUB_URL}assets/icons/close.png`)
-      : (toggleSidebarIMG.current.src = `${GITHUB_URL}assets/icons/more.png`);
+      ? (toggleSidebarIMG.current.src = `/assets/icons/close.png`)
+      : (toggleSidebarIMG.current.src = `/assets/icons/more.png`);
   };
 
   const [isClicked, setIsClicked] = useState(false);
@@ -58,7 +56,7 @@ const TheSidebar = ({ match, history }) => {
           id="toggle-sidebar"
           ref={toggleSidebarIMG}
           alt="close"
-          src={GITHUB_URL + 'assets/icons/more.png'}
+          src={'/assets/icons/more.png'}
         />
       </div>
 
