@@ -8,7 +8,7 @@ export const SignInContainer = styled.div`
   flex-direction: column;
   text-align: center;
 
-  max-width: 30vw;
+  max-width: 25em;
   flex: 1;
   img {
     align-self: center;
